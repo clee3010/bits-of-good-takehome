@@ -1,8 +1,11 @@
 /* Your Styles Here */
 body{
     margin: 0;
-    background-color: #ffeef5;
-    
+    background: linear-gradient(
+        180deg,
+        #fef5f9 0%,
+        #fedeee 100%
+  );
 }
 
 main{
@@ -13,11 +16,17 @@ main{
 }
 
 .card{
-    background-color: #ffdae9;
-    width: 300px;
-    height: 200px;
+    background-color: #ffdbe9;
+    width: 320px;
+    min-height: 220px;
     border-radius: 15px;
     overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .card-header{
@@ -38,11 +47,11 @@ main{
 }
 
 .photo-area {
-    margin: 0px 10px;
+    margin: 0px 8px;
     padding: 3px;
     width: 100px;
     height: 140px;
-    background-color: #ffc3db;
+    background-color: #ffffff;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -54,6 +63,16 @@ main{
     border-radius: 5px;
 }
 
+.info-area {
+    background-color: #fff4f8;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 2px;
+    margin-right: 5px;
+    width: 190px;
+    height: 145px;
+}
+
 .info-line {
     display: flex;
     flex: 1;
@@ -62,33 +81,60 @@ main{
 .info-line p {
     padding-right: 2px;
     text-align: left;
-    font-size: 10px;
+    font-size: 11.3px;
     color: #f49abe;
-    margin: 1;
 }
 
 .info-line h3 {
     padding-right: 2px;
     text-align: left;
-    font-size: 10px;
+    font-size: 11.3px;
     color:#fa8db9;
-    margin: 1;
 }
 
-.more-button {
-    border-radius: 5px;
-    border-color: #fa8db9;
-    background-color: #ffd7e8;
-    font-size: 10px;
-    color: #fa8db9;
-    
-}
-
-.card-back{
+.card-back {
     display: none;
 }
 
-.card-show-back .card-front{
+.card-back p {
+    color: #f49abe;
+    padding: 5px 10px 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #fff4f8;
+    margin: 5px;
+    border-radius: 5px;
+    width: 290px;
+    
+}
+
+.toggle-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+
+}
+
+.toggle-button button{
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: #fa8db9;
+    background-color: #ffffff;
+    font-size: 8px;
+    color: #fa8db9;
+    transition: background-color .15s ease, transform 0.15s ease;
+}
+
+.toggle-button button:hover{
+    background-color: #ffecf4;
+}
+
+.toggle-button button:focus {
+    outline: 2px solid #ffc4db;
+    outline-offset: 1px;
+}
+
+.card.show-back .card-front{
     display: none;
 }
 
